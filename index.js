@@ -2,15 +2,10 @@ const TelegramBot = require('node-telegram-bot-api');
 const Groq = require('groq-sdk');
 const express = require('express');
 
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const bot = new TelegramBot('8678957626:AAEJYKzDKUSPOTIuOmAuzAOZgS-iqcHvgJU', { polling: true });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-console.log('Iniciando bot...');
-console.log('Token presente:', TELEGRAM_TOKEN ? 'SI ✅' : 'NO ❌');
-console.log('Groq key presente:', GROQ_API_KEY ? 'SI ✅' : 'NO ❌');
-
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '8678957626:AAEJYKzDKUSPOTIuOmAuzAOZgS-iqcHvgJU';
-const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
+console.log('Bot iniciado ✅');
 
 const memoria = {};
 
@@ -51,9 +46,7 @@ Eventos: ${JSON.stringify(memoria[chatId].eventos)}`
     });
 
     const texto_respuesta = respuesta.choices[0].message.content;
-
     memoria[chatId].historial.push({ role: 'assistant', content: texto_respuesta });
-
     bot.sendMessage(chatId, texto_respuesta);
 
   } catch (error) {
