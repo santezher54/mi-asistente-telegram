@@ -3,8 +3,8 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const express = require('express');
 
 // Tokens directos para prueba
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || 'TU_TOKEN_AQUI';
-const GEMINI_KEY = process.env.GEMINI_API_KEY || 'TU_GEMINI_KEY_AQUI';
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '8678957626:AAEJYKzDKUSPOTIuOmAuzAOZgS-iqcHvgJU';
+const GEMINI_KEY = process.env.GEMINI_API_KEY || 'AIzaSyCs_kS1OqfIBhfzsp_vBPDHAQWhDGgPT_I';
 
 console.log('Iniciando bot...');
 console.log('Token presente:', TELEGRAM_TOKEN ? 'SI' : 'NO');
