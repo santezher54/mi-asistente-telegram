@@ -9,8 +9,8 @@ console.log('Iniciando bot...');
 console.log('Token presente:', TELEGRAM_TOKEN ? 'SI ✅' : 'NO ❌');
 console.log('Groq key presente:', GROQ_API_KEY ? 'SI ✅' : 'NO ❌');
 
-const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
-const groq = new Groq({ apiKey: GROQ_API_KEY });
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '8678957626:AAEJYKzDKUSPOTIuOmAuzAOZgS-iqcHvgJU';
+const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
 
 const memoria = {};
 
