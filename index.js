@@ -3,7 +3,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const express = require('express');
 
 const app = express();
-const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+console.log('Token:', TELEGRAM_TOKEN ? 'Cargado ✅' : 'NO encontrado ❌');
+const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Memoria por usuario
